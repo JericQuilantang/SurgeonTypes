@@ -85,26 +85,16 @@ body {
   border-color: rgba(0, 153, 140, 0.4);
 }
 
-#contact {
+footer {
   background-color: #343a40;
-  padding: 3em;
   color: rgba(255, 255, 255, 0.5);
 }
 
-#contact h5 {
+footer h5 {
   color: #00998c;
 }
 
-#contact a {
-  color: rgba(255, 255, 255, 0.5);
-  /* text-decoration: none; */
-}
-
-#contact a:hover {
-  color: #00998c;
-}
-
-#contact hr {
+footer hr {
   border-color: rgba(255, 255, 255, 0.1);
   width: 90%;
 }

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/types-of-surgeons.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <title>Landing Page</title>
+  </head>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Case Study</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="nav-overlay"></div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Surgeons</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <!-- Types -->
+    <section id="team" class="pb-5">
+      <div class="container mt-5">
+        <div class="title-container">
+          <h5 class="section-title h1">TYPES OF SURGEONS</h5>
+          <p class="section-description">
+            The American College of Surgeons recognizes 14 surgical specialties,
+            each requiring extensive training and distinct skills to treat
+            specific body areas or conditions:
+          </p>
+        </div>
+        <div class="row" id="surgeons-container"></div>
+      </div>
+    </section>
+    <!-- Team -->
+    <script>
+      // Array of surgeon objects
+      const surgeons = [
+        {
+          name: "Cardiothoracic Surgeons",
+          image: "../assets/surgeons/surgeon1.jpg",
+          description: "Heart and chest surgeries for complex conditions.",
+          details:
+            "Cardiothoracic surgeons operate on the heart and lungs. They treat complex conditions like coronary artery disease and lung cancer.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Cardiothoracic_surgery",
+          },
+        },
+        {
+          name: "Colon and Rectal Surgeons",
+          image: "../assets/surgeons/surgeon2.jpg",
+          description: "Specializes in colon, rectum, and anus diseases.",
+          details:
+            "These surgeons specialize in diseases of the colon, rectum, and anus. They manage conditions such as colorectal cancer and inflammatory bowel disease.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Colon_and_rectal_surgery",
+          },
+        },
+        {
+          name: "General Surgeons",
+          image: "../assets/surgeons/surgeon3.jpg",
+          description:
+            "Versatile surgeons performing varied abdominal procedures.",
+          details:
+            "General surgeons perform a variety of abdominal and soft tissue procedures. They are essential for managing trauma and elective surgeries.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/General_surgery",
+          },
+        },
+        {
+          name: "Gynecologists and Obstetricians",
+          image: "../assets/surgeons/surgeon4.jpg",
+          description: "Focuses on female reproductive health and childbirth.",
+          details:
+            "Gynecologists and obstetricians focus on women’s reproductive health and childbirth. They provide care during pregnancy and manage reproductive health issues.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Gynecology",
+          },
+        },
+        {
+          name: "Gynecologic Oncologists",
+          image: "../assets/surgeons/surgeon5.jpg",
+          description: "Treats cancers of female reproductive organs.",
+          details:
+            "Gynecologic oncologists diagnose and treat female reproductive organ cancers. Their skills combine surgical expertise with oncological treatment for better outcomes.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Gynecologic_oncology",
+          },
+        },
+        {
+          name: "Neurosurgeons",
+          image: "../assets/surgeons/surgeon6.jpg",
+          description:
+            "Operates on brain, spine, and nervous system disorders.",
+          details:
+            "Neurosurgeons specialize in surgical conditions of the brain and spine. They handle complex issues like brain tumors and spinal disorders.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Neurosurgery",
+          },
+        },
+        {
+          name: "Ophthalmic Surgeons",
+          image: "../assets/surgeons/surgeon7.jpg",
+          description: "Surgical treatments for eye health and vision.",
+          details:
+            "Ophthalmic surgeons provide medical and surgical eye care. They perform procedures such as cataract surgery and retinal repairs to preserve vision.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Ophthalmic_surgery",
+          },
+        },
+        {
+          name: "Oral and Maxillofacial Surgeons",
+          image: "../assets/surgeons/surgeon8.jpg",
+          description: "Treats head, neck, face, and jaw conditions.",
+          details:
+            "These surgeons treat conditions of the mouth, jaw, and face. Their work includes trauma management and corrective surgeries for congenital defects.",
+          links: {
+            wikipedia:
+              "https://en.wikipedia.org/wiki/Oral_and_maxillofacial_surgery",
+          },
+        },
+        {
+          name: "Orthopaedic Surgeons",
+          image: "../assets/surgeons/surgeon9.jpg",
+          description: "Focuses on musculoskeletal system and injuries.",
+          details:
+            "Orthopaedic surgeons diagnose and treat musculoskeletal issues. They use minimally invasive techniques for conditions involving bones, joints, and ligaments.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Orthopedic_surgery",
+          },
+        },
+        {
+          name: "ENT Surgeons (Otorhinolaryngologists)",
+          image: "../assets/surgeons/surgeon10.jpg",
+          description: "Manages ear, nose, and throat disorders.",
+          details:
+            "ENT surgeons manage disorders of the ear, nose, and throat. They perform surgeries for conditions like sinusitis and hearing loss.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Otorhinolaryngology",
+          },
+        },
+        {
+          name: "Pediatric Surgeons",
+          image: "../assets/surgeons/surgeon11.jpg",
+          description: "Surgical care for infants and children’s conditions.",
+          details:
+            "Pediatric surgeons provide surgical care for infants and children. They address congenital conditions and trauma using specialized techniques.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Pediatric_surgery",
+          },
+        },
+        {
+          name: "Plastic and Maxillofacial Surgeons",
+          image: "../assets/surgeons/surgeon12.jpg",
+          description:
+            "Reconstructive and cosmetic surgery for appearance restoration.",
+          details:
+            "Plastic and maxillofacial surgeons focus on reconstructive and cosmetic surgery. They restore form and function through facial and aesthetic procedures.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Plastic_surgery",
+          },
+        },
+        {
+          name: "Urologists",
+          image: "../assets/surgeons/surgeon13.jpg",
+          description: "Treats urinary tract and male reproductive issues.",
+          details:
+            "Urologists diagnose and treat urinary tract and male reproductive conditions. They manage issues from kidney stones to prostate disorders.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Urology",
+          },
+        },
+        {
+          name: "Vascular Surgeons",
+          image: "../assets/surgeons/surgeon14.jpg",
+          description: "Manages diseases of arteries and veins.",
+          details:
+            "Vascular surgeons specialize in diseases of the vascular system. They treat conditions like aneurysms and blood clots using various techniques.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Vascular_surgery",
+          },
+        },
+      ];
+
+      // Function to generate surgeon cards
+      function generateSurgeonCards() {
+        const container = document.getElementById("surgeons-container");
+        surgeons.forEach((surgeon) => {
+          const cardHTML = `
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                            <div class="mainflip">
+                                <div class="frontside">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p>
+                                                <img class="img-fluid" src="${surgeon.image}" alt="${surgeon.name}" />
+                                            </p>
+                                            <h4 class="card-title">${surgeon.name}</h4>
+                                            <p class="card-text">${surgeon.description}</p>
+                                            <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="backside">
+                                    <div class="card">
+                                        <div class="card-body text-center mt-4">
+                                            <h4 class="card-title">${surgeon.name}</h4>
+                                            <p class="card-text">${surgeon.details}</p>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank" href="${surgeon.links.wikipedia}">
+                                                        <i class="fas fa-info"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+          container.innerHTML += cardHTML;
+        });
+      }
+
+      // Call the function to generate the cards on page load
+      window.onload = generateSurgeonCards;
+    </script>
+  </body>
+  <footer class="text-center text-lg-start bg-dark">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contact Us</h5>
+
+          <p>
+            If you have any questions or feedback, feel free to reach out! We
+            value your input and strive to provide timely responses. Our team is
+            here to assist you with any inquiries you may have.
+          </p>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Follow Us</h5>
+
+          <p>
+            Stay connected for updates and insights on healthcare. Join our
+            community and engage with others passionate about surgical
+            advancements!
+          </p>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05)">
+      © 2024 Copyright: No Rights Reserved
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- /footer -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../scripts/script.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+</html>
