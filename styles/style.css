@@ -1,0 +1,166 @@
+body {
+  position: relative;
+}
+.downloadBtn {
+  width: 220px;
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid white;
+  margin: 5px;
+  padding: 16px 9px;
+  background-color: #343a40;
+  color: white;
+}
+
+.downloadBtn:hover {
+  background-color: #00998c;
+}
+
+.downloadBtn p {
+  line-height: 20px;
+}
+
+.store {
+  font-size: 26px;
+}
+
+.appLogo {
+  font-size: 45px;
+  padding-left: 12px;
+  padding-right: 2px;
+}
+
+.social {
+  list-style-type: none;
+  font-size: 160%;
+  padding-left: 0;
+}
+
+.social li {
+  display: inline;
+}
+
+#mainHeader {
+  background-image: url("../assets/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center bottom;
+}
+#mainHeader {
+  color: white;
+  text-shadow: 2px 1px black;
+}
+
+#mainHeader .input-group-text {
+  text-shadow: none;
+}
+
+#mainHeader hr {
+  border-color: white;
+  width: 50%;
+}
+
+#mainHeader button {
+  background-color: #343a40;
+  border-color: white;
+  color: white;
+}
+
+#mainHeader button:hover {
+  background-color: #00998c;
+  border-color: white;
+  color: white;
+}
+
+#about h5 {
+  font-size: 1.5em;
+  color: #00998c;
+}
+
+#about span {
+  font-size: 170%;
+}
+
+#about .card {
+  border-color: rgba(0, 153, 140, 0.4);
+}
+
+#contact {
+  background-color: #343a40;
+  padding: 3em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#contact h5 {
+  color: #00998c;
+}
+
+#contact a {
+  color: rgba(255, 255, 255, 0.5);
+  /* text-decoration: none; */
+}
+
+#contact a:hover {
+  color: #00998c;
+}
+
+#contact hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  width: 90%;
+}
+
+/* NAVIGATION BAR STYLES */
+.navbar-toggler {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+@media screen and (max-width: 991px) {
+  .navbar-collapse.collapse:not(.show) {
+    display: block;
+  }
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #212529;
+    width: 215px;
+    height: 100%;
+    z-index: 9999;
+    padding: 25px;
+    transform: translateX(-215px);
+    transition: 0.5s ease-in-out;
+    display: block;
+  }
+  .navbar-collapse.show {
+    transform: translateX(0px);
+  }
+  .nav-overlay {
+    position: absolute;
+    background: #0000007d;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform: translateX(-100vw);
+    transition: 0.5s ease-in-out;
+    display: block;
+  }
+  .nav-overlay.active {
+    transform: translateX(0);
+  }
+  #mainHeader {
+    background-size: 100% 100%;
+    padding-top: 5rem;
+  }
+  #about .container .card {
+    margin-bottom: 1rem;
+  }
+}
