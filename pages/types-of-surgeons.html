@@ -18,12 +18,12 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
-    <title>Landing Page</title>
+    <title>Specialties</title>
   </head>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Case Study</a>
+        <a class="navbar-brand" href="../index.html">Case Study</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -43,14 +43,11 @@
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"
-                >Surgeons</a
+                >Specialties</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Contact Us</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
           </ul>
         </div>
@@ -107,16 +104,7 @@
             wikipedia: "https://en.wikipedia.org/wiki/General_surgery",
           },
         },
-        {
-          name: "Gynecologists and Obstetricians",
-          image: "../assets/surgeons/surgeon4.jpg",
-          description: "Focuses on female reproductive health and childbirth.",
-          details:
-            "Gynecologists and obstetricians focus on women’s reproductive health and childbirth. They provide care during pregnancy and manage reproductive health issues.",
-          links: {
-            wikipedia: "https://en.wikipedia.org/wiki/Gynecology",
-          },
-        },
+
         {
           name: "Gynecologic Oncologists",
           image: "../assets/surgeons/surgeon5.jpg",
@@ -190,17 +178,6 @@
           },
         },
         {
-          name: "Plastic and Maxillofacial Surgeons",
-          image: "../assets/surgeons/surgeon12.jpg",
-          description:
-            "Reconstructive and cosmetic surgery for appearance restoration.",
-          details:
-            "Plastic and maxillofacial surgeons focus on reconstructive and cosmetic surgery. They restore form and function through facial and aesthetic procedures.",
-          links: {
-            wikipedia: "https://en.wikipedia.org/wiki/Plastic_surgery",
-          },
-        },
-        {
           name: "Urologists",
           image: "../assets/surgeons/surgeon13.jpg",
           description: "Treats urinary tract and male reproductive issues.",
@@ -218,6 +195,27 @@
             "Vascular surgeons specialize in diseases of the vascular system. They treat conditions like aneurysms and blood clots using various techniques.",
           links: {
             wikipedia: "https://en.wikipedia.org/wiki/Vascular_surgery",
+          },
+        },
+        {
+          name: "Gynecologists and Obstetricians",
+          image: "../assets/surgeons/surgeon4.jpg",
+          description: "Focuses on female reproductive health and childbirth.",
+          details:
+            "Gynecologists and obstetricians focus on women’s reproductive health and childbirth. They provide care during pregnancy and manage reproductive health issues.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Gynecology",
+          },
+        },
+        {
+          name: "Plastic and Maxillofacial Surgeons",
+          image: "../assets/surgeons/surgeon12.jpg",
+          description:
+            "Reconstructive and cosmetic surgery for appearance restoration.",
+          details:
+            "Plastic and maxillofacial surgeons focus on reconstructive and cosmetic surgery. They restore form and function through facial and aesthetic procedures.",
+          links: {
+            wikipedia: "https://en.wikipedia.org/wiki/Plastic_surgery",
           },
         },
       ];
@@ -265,7 +263,6 @@
         });
       }
 
-      // Call the function to generate the cards on page load
       window.onload = generateSurgeonCards;
     </script>
   </body>
