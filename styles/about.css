@@ -1,6 +1,8 @@
 body {
-  font-family: "Rubik", sans-serif;
   line-height: 1.5;
+}
+#about-section {
+  font-family: "Rubik", sans-serif;
 }
 #about-section h2 {
   font-size: 40px;
